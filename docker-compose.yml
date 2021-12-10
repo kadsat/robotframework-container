@@ -7,9 +7,13 @@ services:
     ports:
       - "4444:4444"
   test:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
-    depends_on: 
+    depends_on:
       - "selenium"
-    command: ["pip install --no-cache-dir -r requirements.txt","mkdir /usr/src/app/results","robot -d /usr/src/app/results testCase.robot"]
+    command: > 
+      bash -c "pip install --no-cache-dir -r requirements.txt && 
+      mkdir /usr/src/app/results && 
+      robot -d /usr/src/app/results testCase.robot &&
+      tail -f /dev/null"
