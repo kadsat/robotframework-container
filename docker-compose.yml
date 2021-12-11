@@ -14,6 +14,5 @@ services:
       - "selenium"
     command: > 
       bash -c "pip install --no-cache-dir -r requirements.txt && 
-      mkdir /usr/src/app/results && 
-      robot -d /usr/src/app/results testCase.robot &&
+      robot -d results testCase.robot &&
       tail -f /dev/null"
