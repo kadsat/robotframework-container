@@ -1,18 +1,7 @@
 services:
-  selenium:
-    image: selenium/standalone-chrome
-    hostname: selenium
-    privileged: true
-    shm_size: 2g
-    ports:
-      - "4444:4444"
-  test:
+  playwright:
     build:
       context: .
       dockerfile: Dockerfile
-    depends_on:
-      - "selenium"
-    command: > 
-      bash -c "pip install --no-cache-dir -r requirements.txt && 
-      robot -d results testCase.robot &&
-      tail -f /dev/null"
+    container_name: playwright-robot-container
+    command: "tail -f /dev/null"

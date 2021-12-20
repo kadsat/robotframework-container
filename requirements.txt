@@ -1,4 +1,5 @@
 # Installing robotframework and robotframework-selenium library
 robotframework==4.1
 robotframework-seleniumlibrary==5.1.3
+robotframework-browser
 pandas
