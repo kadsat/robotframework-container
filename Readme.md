@@ -20,8 +20,8 @@ pip install docker-compose
 docker-compose version  
 
 ----------- Executing the tests and obtaining the results -----------------------  
----> Running the .robot test case in docker, note the image already has the tests and dependencies
+---> Running the .robot test case in docker, note the image already has the tests and dependencies  
 docker exec -it playwright-robot-container robot -d results playwright_test.robot
-
----> copying results to local file for further execution
+  
+---> copying results to local file for further execution  
 docker cp playwright-robot-container:results . 
